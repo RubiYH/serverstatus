@@ -36,7 +36,8 @@ client.on("ready", () => {
             current_players.join("\n")
           )
           .addField("Max Players", json.players.max)
-		  .setTimestamp();
+	  .setTimestamp()
+	  .setFooter("By Rubi");
 
         //client.channels.cache.get(config.channelID).send(embed);
 
