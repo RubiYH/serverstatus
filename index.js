@@ -24,9 +24,9 @@ client.on("ready", () => {
           current_players.push(json.players.sample[i].name);
         }
 
-        var embed = new Discord.MessageEmbed()
+        var online_embed = new Discord.MessageEmbed()
           .setAuthor("Inferno SMP Server Status")
-          .setTitle(json.online ? "\\🟢 Online" : "\\🔴 Offline")
+          .setTitle("\\🟢 Online")
           .setDescription("```" + json.description.extra[0].text + "```")
           .addField("Version", json.version.name, true)
           .addField("Type", "Java Edition", true)
@@ -36,16 +36,26 @@ client.on("ready", () => {
             current_players.join("\n")
           )
           .addField("Max Players", json.players.max)
-	  .setTimestamp()
-	  .setFooter("By Rubi");
+          .setTimestamp()
+          .setFooter("By Rubi");
 
+        var offline_embed = new Discord.MessageEmbed()
+          .setAuthor("Inferno SMP server Status")
+          .setTitle("\\🔴 Offline")
+          .setDescription("Server is currently offline.")
+          .setTimestamp()
+          .setFooter("By Rubi");
         //client.channels.cache.get(config.channelID).send(embed);
 
         client.channels.cache
           .get(config.channelID)
           .messages.fetch("879372883686723594")
           .then((m) => {
-            m.edit(embed);
+            if (json.online == true) {
+              m.edit(online_embed);
+            } else if (json.online == false) {
+              m.edit(offline_embed);
+            }
           });
       });
   }, 1000 * 60 * 5);
