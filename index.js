@@ -50,4 +50,4 @@ client.on("ready", () => {
   }, 1000 * 60 * 5);
 });
 
-client.login(config.token);
+client.login(process.env.token);
