@@ -52,7 +52,7 @@ client.on("ready", () => {
           .messages.fetch("879372883686723594")
           .then((m) => {
             if (json.online == true) {
-              if (json.description) {
+              if (json.description.extra) {
                 m.edit(online_embed);
               } else {
                 m.edit(offline_embed);
