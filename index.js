@@ -19,9 +19,11 @@ client.on("ready", () => {
       .then((json) => {
         let current_players = [];
 
-        for (var i in json.players.sample) {
-          console.log(json.players.sample[i].name);
-          current_players.push(json.players.sample[i].name);
+        if (json.players.sample) {
+          for (var i in json.players.sample) {
+            console.log(json.players.sample[i].name);
+            current_players.push(json.players.sample[i].name);
+          }
         }
 
         var online_embed = new Discord.MessageEmbed()
