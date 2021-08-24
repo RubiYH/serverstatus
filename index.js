@@ -46,6 +46,12 @@ client.on("ready", () => {
             .then((m) => {
               m.edit(online_embed);
             });
+          
+          client.channels.cache.get(config.channelID).send("****")
+          .then(m => {
+             m.delete()
+          });
+          
         } else {
           var offline_embed = new Discord.MessageEmbed()
             .setAuthor("Inferno SMP server Status")
@@ -60,6 +66,11 @@ client.on("ready", () => {
             .then((m) => {
               m.edit(offline_embed);
             });
+          
+          client.channels.cache.get(config.channelID).send("****")
+          .then(m => {
+             m.delete()
+          });
         }
         //client.channels.cache.get(config.channelID).send(embed);
       });
