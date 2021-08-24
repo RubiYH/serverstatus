@@ -19,7 +19,7 @@ client.on("ready", () => {
       .then((json) => {
         let current_players = [];
 
-        if (json.players.sample) {
+        if (json.players) {
           for (var i in json.players.sample) {
             console.log(json.players.sample[i].name);
             current_players.push(json.players.sample[i].name);
@@ -34,7 +34,7 @@ client.on("ready", () => {
           .addField("\u200b", "\u200b", true)
           .addField(
             `Currently Online: **\`${json.players.online}\`**`,
-            current_players.join("\n")
+            current_players.join("\n") || "None"
           )
           .addField("Max Players", json.players.max)
           .setTimestamp()
