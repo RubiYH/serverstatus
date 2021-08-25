@@ -42,7 +42,7 @@ client.on("ready", () => {
 
           client.channels.cache
             .get(config.channelID)
-            .messages.fetch("879372883686723594")
+            .messages.fetch("879958103066562611")
             .then((m) => {
               m.edit(online_embed);
             });
@@ -62,7 +62,7 @@ client.on("ready", () => {
 
           client.channels.cache
             .get(config.channelID)
-            .messages.fetch("879372883686723594")
+            .messages.fetch("879958103066562611")
             .then((m) => {
               m.edit(offline_embed);
             });
