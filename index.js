@@ -34,7 +34,7 @@ client.on("ready", () => {
             .addField("\u200b", "\u200b", true)
             .addField(
               `Currently Online: **\`${json.players.online}\`**`,
-              current_players.join("\n") || "None"
+              current_players.join("\n") || "No one is playing."
             )
             .addField("Max Players", json.players.max)
             .setTimestamp()
@@ -72,7 +72,7 @@ client.on("ready", () => {
              m.delete()
           });
         }
-        //client.channels.cache.get(config.channelID).send(embed);
+        client.channels.cache.get(config.channelID).send(embed);
       });
   }, 1000 * 60 * 5);
 });
