@@ -12,6 +12,9 @@ let settings = {
 
 client.on("ready", () => {
   console.log("Bot logged in");
+          var embed = new Discord.MessageEmbed()
+          .setTitle("tet")
+          client.channels.cache.get(config.channelID).send(embed);
 
   setInterval(() => {
     fetch(url, settings)
@@ -72,7 +75,6 @@ client.on("ready", () => {
              m.delete()
           });
         }
-        client.channels.cache.get(config.channelID).send(embed);
       });
   }, 1000 * 60 * 5);
 });
