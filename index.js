@@ -12,9 +12,6 @@ let settings = {
 
 client.on("ready", () => {
   console.log("Bot logged in");
-          var embed = new Discord.MessageEmbed()
-          .setTitle("tet")
-          client.channels.cache.get(config.channelID).send(embed);
 
   setInterval(() => {
     fetch(url, settings)
