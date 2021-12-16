@@ -19,7 +19,7 @@ client.on("ready", () => {
     fetch(url, settings)
       .then((res) => res.json())
       .then((json) => {
-        if (json.online == true && json.description.extra) {
+        if (json.online == true && json.description.text) {
           let current_players = [];
 
           for (var i in json.players.sample) {
