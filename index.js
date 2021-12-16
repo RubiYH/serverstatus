@@ -44,7 +44,7 @@ client.on("ready", () => {
 
           client.channels.cache
             .get(config.channelID)
-            .messages.fetch("879958103066562611")
+            .messages.fetch("920896504112250891")
             .then((m) => {
               m.edit(online_embed);
             });
