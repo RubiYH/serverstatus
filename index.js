@@ -12,6 +12,8 @@ let settings = {
 
 client.on("ready", () => {
   console.log("Bot logged in");
+  
+  client.channels.cache.get(config.channelID).send("test")
 
   setInterval(() => {
     fetch(url, settings)
