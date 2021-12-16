@@ -13,7 +13,7 @@ let settings = {
 client.on("ready", () => {
   console.log("Bot logged in");
   
-  client.channels.cache.get(config.channelID).send("test")
+//   client.channels.cache.get(config.channelID).send("test")
 
   setInterval(() => {
     fetch(url, settings)
@@ -64,7 +64,7 @@ client.on("ready", () => {
 
           client.channels.cache
             .get(config.channelID)
-            .messages.fetch("879958103066562611")
+            .messages.fetch("920902753449017385")
             .then((m) => {
               m.edit(offline_embed);
             });
