@@ -30,7 +30,7 @@ client.on("ready", () => {
           var online_embed = new Discord.MessageEmbed()
             .setAuthor("Inferno SMP Server Status")
             .setTitle("\\🟢 Online")
-            .setDescription("```" + json.description.extra[1] + "```")
+            .setDescription("```" + json.description.extra[1].text + "```")
             .addField("Version", json.version.name, true)
             .addField("Type", "Java Edition", true)
             .addField("\u200b", "\u200b", true)
