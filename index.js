@@ -23,14 +23,14 @@ client.on("ready", () => {
           let current_players = [];
 
           for (var i in json.players.sample) {
-            console.log(json.players.sample[i].name);
+            //console.log(json.players.sample[i].name);
             current_players.push(json.players.sample[i].name);
           }
 
           var online_embed = new Discord.MessageEmbed()
             .setAuthor("Inferno SMP Server Status")
             .setTitle("\\🟢 Online")
-            .setDescription("```" + json.description.text + "```")
+            .setDescription("```" + json.description.extra[1] + "```")
             .addField("Version", json.version.name, true)
             .addField("Type", "Java Edition", true)
             .addField("\u200b", "\u200b", true)
